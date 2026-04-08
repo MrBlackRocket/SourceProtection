@@ -1,12 +1,16 @@
 {
 	"name": "SourceProtection",
-	"version": "1.1.3",
+	"version": "1.2.0",
 	"author": [
-		"Sen-Sai"
+		"Sen-Sai",
+		"MrBlackRocket"
 	],
 	"license-name": "GPL-2.0+",
-	"url": "https://github.com/Sen-Sai/SourceProtection",
+	"url": "https://github.com/MrBlackRocket/SourceProtection",
 	"descriptionmsg": "sourceprotection-desc",
+	"requires": {
+		"MediaWiki": ">= 1.43.0"
+	},
 	"MessagesDirs": {
 		"SourceProtection": [
 			"i18n"
@@ -19,12 +23,15 @@
 		"EditPage::showReadOnlyForm:initial": [
 			"SourceProtection::doNotShowReadOnlyForm"
 		],
-		"userCan": [
+		"getUserPermissionsErrors": [
 			"SourceProtection::disableActions"
 		],
-		"SkinTemplateNavigation": [
+		"MediaWikiPerformAction": [
+			"SourceProtection::preventActionAccess"
+		],
+		"SkinTemplateNavigation::Universal": [
 			"SourceProtection::hideSource"
 		]
 	},
-	"manifest_version": 1
+	"manifest_version": 2
 }
