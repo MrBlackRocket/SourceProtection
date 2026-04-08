@@ -11,10 +11,12 @@ It will also block the viewing of the readonly form.
 
 1.1.3 Version bumb for MW 1.39 branch
 
+1.2.0 Ports the extension to MediaWiki 1.43 by replacing removed/deprecated hooks and modernizing action checks.
+
 ### Compatibility
 
-* PHP 5.4+
-* MediaWiki 1.24+
+* PHP 8.1+ recommended
+* MediaWiki 1.43+
 
 
 ### Installation
@@ -43,3 +45,6 @@ There is no need for additional configuration, besides giving users an edit perm
 It makes no sense to install this extension to hide the sourcecode of a page if you do not take various other actions as well.
 e.g. If you open the API with default edit rights, source content can still be read. Likewise for anonymous users. If they
 receive edit rights, the sourcecode of page can be viewed, edited, etc..
+
+For MediaWiki 1.43, the extension is intended as UI and action hardening. It does not provide full content confidentiality
+against every possible read path or API surface.
